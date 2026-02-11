@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" alignment="TOP_CENTER" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.crud.controller.ClientesController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="Gerenciamento de Produtos" style="-fx-font-weight: bold;"><font><Font size="20.0" /></font></Label>
+
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="txtNome" promptText="Nome do Produto" />
+        <TextField fx:id="txtPreco" promptText="Preço" />
+        <Button text="Salvar" onAction="#salvarProduto" style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+        <Button text="Excluir" onAction="#excluirProduto" style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+        <Button text="Limpar" onAction="#limparCampos" />
+    </HBox>
+
+    <TableView fx:id="tabelaProdutos" VBox.vgrow="ALWAYS" onMouseClicked="#selecionarItem">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50" />
+            <TableColumn fx:id="colNome" text="Nome" prefWidth="250" />
+            <TableColumn fx:id="colPreco" text="Preço (R$)" prefWidth="100" />
+        </columns>
+    </TableView>
+</VBox>
