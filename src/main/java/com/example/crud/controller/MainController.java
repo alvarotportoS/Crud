@@ -12,9 +12,10 @@ public class MainController {
     private BorderPane root;
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         carregarTela("Home.fxml");
     }
+
     @FXML
     public void abrirHome() {
         carregarTela("Home.fxml");
@@ -29,6 +30,7 @@ public class MainController {
     public void abrirClientes() {
         carregarTela("Clientes.fxml");
     }
+
     @FXML
     public void abrirAjuda(ActionEvent event) {
 

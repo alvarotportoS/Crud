@@ -4,20 +4,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<VBox spacing="15.0" alignment="TOP_CENTER" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.crud.controller.ClientesController">
+<VBox spacing="15.0" alignment="TOP_CENTER" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.crud.controller.ClienteController">
     <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
 
-    <Label text="Gerenciamento de Produtos" style="-fx-font-weight: bold;"><font><Font size="20.0" /></font></Label>
+    <Label text="Gerenciamento de Clientes" style="-fx-font-weight: bold;"><font><Font size="20.0" /></font></Label>
 
     <HBox spacing="10" alignment="CENTER">
-        <TextField fx:id="txtNome" promptText="Nome do Produto" />
-        <TextField fx:id="txtCpf" promptText="Preço" />
+        <TextField fx:id="txtNome" promptText="Nome do Cliente" />
+        <TextField fx:id="txtCpf" promptText="Cpf" />
         <Button text="Salvar" onAction="#salvarCliente" style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
         <Button text="Excluir" onAction="#excluirCliente" style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
         <Button text="Limpar" onAction="#limparCampos" />
     </HBox>
 
-    <TableView fx:id="tabelaClientes" VBox.vgrow="ALWAYS" onMouseClicked="#selecionarItem">
+    <TableView fx:id="tabelaCliente" VBox.vgrow="ALWAYS" onMouseClicked="#selecionarItem">
         <columns>
             <TableColumn fx:id="colId" text="ID" prefWidth="50" />
             <TableColumn fx:id="colNome" text="Nome" prefWidth="250" />
