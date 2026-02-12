@@ -17,10 +17,13 @@ public class ClienteDao {
     }
 
     public void salvar(Cliente cliente) throws SQLException {
-        String sql = "INSERT INTO cliente (nome, cpf) VALUES (?, ?)";
+        String sql = "INSERT INTO cliente (nome, cpf, telefone, email, cep) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, cliente.getNome());
             stmt.setString(2, cliente.getCpf());
+            stmt.setString(3, cliente.getTelefone());
+            stmt.setString(4, cliente.getEmail());
+            stmt.setString(5, cliente.getCep());
             stmt.execute();
         }
     }
@@ -35,6 +38,10 @@ public class ClienteDao {
                 p.setId(rs.getInt("id"));
                 p.setNome(rs.getString("nome"));
                 p.setCpf(rs.getString("cpf"));
+                p.setTelefone(rs.getString("Telefone"));
+                p.setEmail(rs.getString("Email"));
+                p.setCep(rs.getString("Cep"));
+
                 cliente.add(p);
             }
         }
@@ -47,6 +54,10 @@ public class ClienteDao {
             stmt.setString(1, cliente.getNome());
             stmt.setString(2, cliente.getCpf());
             stmt.setInt(3, cliente.getId());
+            stmt.setString(4,cliente.getTelefone());
+            stmt.setString(5,cliente.getEmail());
+            stmt.setString(6,cliente.getCep());
+
             stmt.execute();
         }
     }
